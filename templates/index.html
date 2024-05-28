@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Hii This Flask App</h1>
+
+    <p>My App</p>
+
+    <button id="startButton">Click Me</button>
+
+
+    <a href="main.py">hello</a>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#startButton').click(function() {
+                $.ajax({
+                    url: '/start_face_recognition',
+                    type: 'POST',
+                    success: function(response) {
+                        alert(response.status);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+</html>
